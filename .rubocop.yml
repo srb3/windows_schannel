@@ -1,4 +1,4 @@
 # Rubocop configuration file
-# - overriding the any defaults
+# - overriding the any defaults.
 Metrics/LineLength:
   Max: 300

@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+## 0.1.2 - (17-06-2016)
+- Fixed some typo's in the README ready for relase to the supermarket.
+
 ## v0.1.1 (16-06-2016)
 
 - Changed the attribute values to make it easier to read rather than 1 or 0, means it is now caSe sensitive

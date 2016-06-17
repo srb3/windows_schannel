@@ -3,16 +3,14 @@ Windows Schannel Cookbook
 
 Description
 -------------
-A cookbook to configure the windows Secure Channel [Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/aa380123(v=vs.85).aspx) security support provider (SSP).
-This SSP contains a set of security protocols and ciphers suites commonly used for HTTPS communications.
-
-Many of the microsoft provided services and 3rd party software make use of Schannel for their communication so by removing support for a given protocol, removes it for components.
+A cookbook to configure the windows Secure Channel [(Schannel)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa380123) security support provider (SSP).
+This SSP contains a set of security protocols and ciphers suites commonly used for HTTPS communications.  Many of the microsoft provided services and 3rd party software make use of Schannel for their communication so by removing support for a given protocol, removes it for all components.
 
 This can be a double-edge sword, restricting a protocol might be fine for one service and end up breaking another.
 
-Always make sure you test these settings before deploying into production as you could end up _shooting yourself in the foot_
+Always make sure you __test__ these settings __before__ deploying into __production__ as you could end up __shooting yourself in the foot__
 
-This cookbook will help you control which protocols & ciphers are enable, this should help improve your security posture for the following microsoft services.
+Using this cookbook should help improve your security posture for the following microsoft services and help towards meeting regulatory compliance (PCI CIS FIPS) 
 
 * Internet Information Services (IIS)
 * Microsoft Remote Desktop (RDP) _when configured to use TLS_
@@ -22,7 +20,7 @@ This cookbook will help you control which protocols & ciphers are enable, this s
 
 TODO : Insert image of external scan before and after.
 
-Cookbook Support for the following
+Support for managing the following
 ----------------
 ### Protocols
 + Transport Layer Security (TLS) - v1.0, v1.1, v1.2
@@ -47,7 +45,7 @@ Requirements
 Attributes
 ----------
 * `node['windows_schannel']['allow_reboot']` = `false` 
-_changes made to protocols won't take affect until after a restart, this doesn't apply to ciphers,hashes and the default is false change this to true to initiate a reboot after the run._
+_changes made to protocols won't take affect until after a restart, this doesn't apply to ciphers and hashes. The default is false change this to true to initiate a reboot after the run._
 
 Other than the `allow_reboot` attribute all the others are controlled by either setting it to either `enable` or `disable`
 _this is CaSe Sensitive_
@@ -59,6 +57,7 @@ _this is CaSe Sensitive_
 * `node['windows_schannel']['tls_v1.0']` = `enable`
 * `node['windows_schannel']['tls_v1.1']` = `enable`
 * `node['windows_schannel']['tls_v1.2']` = `enable`
+
 #### Ciphers
 * `node['windows_schannel']['cipher_null']` = `disable`
 * `node['windows_schannel']['cipher_des']` = `disable`
@@ -66,9 +65,11 @@ _this is CaSe Sensitive_
 * `node['windows_schannel']['cipher_rc4']` = `disable`
 * `node['windows_schannel']['cipher_3des']` = `enable`
 * `node['windows_schannel']['cipher_aes']` = `enable`
+
 #### Hashes
 * `node['windows_schannel']['hash_md5']` = `enable`
 * `node['windows_schannel']['hash_sha']` = `enable`
+
 #### Key Exchanges
 * `node['windows_schannel']['keyEx_dh']` = `enable`
 
