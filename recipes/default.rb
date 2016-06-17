@@ -10,5 +10,7 @@ when 'windows'
     # Windows Version 6.3 is Windows 2012 R2
     include_recipe 'windows_schannel::protocols'
     include_recipe 'windows_schannel::ciphers'
+    include_recipe 'windows_schannel::hashes'
+    include_recipe 'windows_schannel::key_exchanges'
   end
 end

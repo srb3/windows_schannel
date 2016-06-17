@@ -19,16 +19,16 @@ describe 'windows_schannel::ciphers' do
       expect(chef_run).to create_registry_key('cipher_des')
     end
     it 'configures the cipher rc2' do
-      expect(chef_run).to create_registry_key('cipher_rc2')
+      expect(chef_run).to create_registry_key('RC2 40/128')
     end
     it 'configures the cipher rc4' do
-      expect(chef_run).to create_registry_key('cipher_des')
+      expect(chef_run).to create_registry_key('RC4 40/128')
     end
     it 'configures the cipher 3des' do
       expect(chef_run).to create_registry_key('cipher_3des')
     end
     it 'configures the cipher aes' do
-      expect(chef_run).to create_registry_key('cipher_aes')
+      expect(chef_run).to create_registry_key('AES 128/128')
     end
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error

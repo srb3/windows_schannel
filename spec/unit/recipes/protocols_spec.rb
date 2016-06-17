@@ -21,9 +21,6 @@ describe 'windows_schannel::protocols' do
     it 'configures the protocol tls_v1.2' do
       expect(chef_run).to create_registry_key('tls_v1.2')
     end
-    it 'configures the protocol ssl_v1.0' do
-      expect(chef_run).to create_registry_key('ssl_v1.0')
-    end
     it 'configures the protocol ssl_v2.0' do
       expect(chef_run).to create_registry_key('ssl_v2.0')
     end
