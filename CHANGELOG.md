@@ -2,7 +2,12 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+## 0.1.3 - (20-06-2016)
+
+- Changed the description to make it easyer to understand what it does in the supermarket
+
 ## 0.1.2 - (17-06-2016)
+
 - Fixed some typo's in the README ready for relase to the supermarket.
 
 ## v0.1.1 (16-06-2016)

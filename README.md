@@ -75,7 +75,7 @@ _this is CaSe Sensitive_
 
 License & Authors
 -----------------
-- Author:: Gary Bright (<user@dev.null>)
+- Author:: Gary Bright (<digitalgaz@hotmail.com>)
 
 ```text
 Copyright 2016, Gary Bright
