@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+## 0.2.0 - (06-10-2017)
+
+- Refreshed cookbook metadata, corrected unit & chef style linting errors
+
 ## 0.1.4 - (19-09-2016)
 
 - Added RC4 128/128 to the RC4 cipher suite with RC4 128/128 unit test

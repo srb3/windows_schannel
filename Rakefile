@@ -1,28 +1,42 @@
-require 'rspec/core/rake_task'
-require 'rubocop/rake_task'
-require 'foodcritic'
+require 'bundler/setup'
 
-# Style tests. Rubocop and Foodcritic.
+desc 'Clean some generated files'
+task :clean do
+  %w(
+    Berksfile.lock
+    .bundle
+    .cache
+    coverage
+    Gemfile.lock
+    .kitchen
+    metadata.json
+    vendor
+  ).each { |f| FileUtils.rm_rf(Dir.glob(f)) }
+end
+
 namespace :style do
-  desc 'Run Ruby style checks'
-  RuboCop::RakeTask.new(:rubocop) do |t|
-    t.options = ['-D']
+  require 'cookstyle'
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new(:ruby) do |task|
+    task.options << '--display-cop-names'
   end
 
-  desc 'Run Chef style checks'
-  FoodCritic::Rake::LintTask.new(:foodcritic) do |t|
-    t.options = {
-      fail_tags: ['any']
-    }
-  end
+  require 'foodcritic'
+  desc 'Run Chef style checks using foodcritic'
+  FoodCritic::Rake::LintTask.new(:chef)
 end
 
 desc 'Run all style checks'
-task style: ['style:foodcritic', 'style:rubocop']
+task style: %w(style:chef style:ruby)
 
-# Rspec and ChefSpec
-desc 'Run ChefSpec examples'
-RSpec::Core::RakeTask.new(:spec)
+desc 'Run ChefSpec unit tests'
+task :unit do
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:unit) do |t|
+    t.rspec_opts = '--color --format progress'
+    t.pattern = 'spec/unit/**{,/*/**}/*_spec.rb'
+  end
+end
 
-# Default
-task default: %w(style spec)
+desc 'Run style and unit tests'
+task default: %w(style unit)

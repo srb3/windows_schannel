@@ -11,14 +11,10 @@ when 'windows'
       recursive true
       case node['windows_schannel']['cipher_null']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 0)
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
       only_if { node['windows_schannel']['cipher_null'] }
@@ -29,14 +25,10 @@ when 'windows'
       recursive true
       case node['windows_schannel']['cipher_des']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 0)
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
       only_if { node['windows_schannel']['cipher_des'] }
@@ -48,7 +40,7 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 0 }]
+          values(name: 'Enabled', type: :dword, data: 0)
           :create
         end
       end
@@ -57,7 +49,7 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 }]
+          values(name: 'Enabled', type: :dword, data: 4_294_967_295)
           :create
         end
       end
@@ -69,7 +61,7 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 0 }]
+          values(name: 'Enabled', type: :dword, data: 0)
           :create
         end
       end
@@ -78,7 +70,7 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 }]
+          values(name: 'Enabled', type: :dword, data: 4_294_967_295)
           :create
         end
       end
@@ -89,14 +81,10 @@ when 'windows'
       recursive true
       case node['windows_schannel']['cipher_3des']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 0)
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
       only_if { node['windows_schannel']['cipher_3des'] }
@@ -108,7 +96,7 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 0 }]
+          values(name: 'Enabled', type: :dword, data: 0)
           :create
         end
       end
@@ -117,41 +105,10 @@ when 'windows'
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
-          values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 }]
+          values(name: 'Enabled', type: :dword, data: 4_294_967_295)
           :create
         end
       end
     end
   end
 end
-
-#     registry_key 'cipher_rc4' do
-#       key 'HKLM\sdffds'
-#       values [{
-#         name: 'Enable',
-#         type: :dword,
-#         data: "node['windows_schannel']['cipher_rc4']"
-#       }]
-#       action :create
-#       only_if { node['windows_schannel']['cipher_rc4'].is_a?(Integer) }
-#     end
-#     registry_key 'cipher_3des' do
-#       key 'HKLM\sdffds'
-#       values [{
-#         name: 'Enable',
-#         type: :dword,
-#         data: "node['windows_schannel']['cipher_3des']"
-#       }]
-#       action :create
-#       only_if { node['windows_schannel']['cipher_3des'].is_a?(Integer) }
-#     end
-#     registry_key 'cipher_aes' do
-#       key 'HKLM\sdffds'
-#       values [{
-#         name: 'Enable',
-#         type: :dword,
-#         data: "node['windows_schannel']['cipher_aes']"
-#       }]
-#       action :create
-#       only_if { node['windows_schannel']['cipher_aes'].is_a?(Integer) }
-#     end

@@ -19,16 +19,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['pct_v1.0']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
@@ -40,16 +36,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['ssl_v2.0']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
@@ -61,16 +53,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['ssl_v3.0']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
@@ -82,16 +70,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['tls_v1.0']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
@@ -103,16 +87,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['tls_v1.1']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
@@ -124,16 +104,12 @@ when 'windows'
       recursive true
       case node['windows_schannel']['tls_v1.2']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 },
-          { name: 'DisabledByDefault', type: :dword, data: 1 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 0 },
+                { name: 'DisabledByDefault', type: :dword, data: 1 }]
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 },
-          { name: 'DisabledByDefault', type: :dword, data: 0 }
-        ]
+        values [{ name: 'Enabled', type: :dword, data: 4_294_967_295 },
+                { name: 'DisabledByDefault', type: :dword, data: 0 }]
         :create
       end
       notifies :request_reboot, 'reboot[computer]'

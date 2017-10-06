@@ -7,13 +7,11 @@ driver:
 provisioner:
   name: chef_zero
 
-# Uncomment the following verifier to leverage Inspec instead of Busser (the
-# default verifier)
-# verifier:
-#   name: inspec
+verifier:
+  name: inspec
 
 platforms:
-  - name: windows-2012r2
+  - name: win2012r2
 
 suites:
   - name: default

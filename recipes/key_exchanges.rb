@@ -11,14 +11,10 @@ when 'windows'
       recursive true
       case node['windows_schannel']['keyEx_dh']
       when 'disable'
-        values [
-          { name: 'Enabled', type: :dword, data: 0 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 0)
         :create
       when 'enable'
-        values [
-          { name: 'Enabled', type: :dword, data: 4_294_967_295 }
-        ]
+        values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
       only_if { node['windows_schannel']['keyEx_dh'] }
