@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+# 0.4.1 - (06-10-2017)
+
+- The registry key for the 3DES Cipher was incorrect and as a result wasn't managing it correctly
+
 # 0.4.0 - (06-10-2017)
 
 - Migrated the integration tests to inspec.

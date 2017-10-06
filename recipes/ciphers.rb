@@ -75,7 +75,7 @@ when 'windows'
     end
 
     registry_key 'cipher_3des' do
-      key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168/168'
+      key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168'
       recursive true
       case node['windows_schannel']['cipher_3des']
       when 'disable'

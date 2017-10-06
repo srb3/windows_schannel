@@ -44,7 +44,7 @@ end
 
 control 'SCHANNEL : Ciphers : 3DES' do
   title 'it should create a registry key and disable the cipher'
-  describe registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168/168') do
+  describe registry_key('HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168') do
     its('Enabled') { should eq -1 }
   end
 end
