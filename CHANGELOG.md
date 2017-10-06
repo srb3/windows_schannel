@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+# 0.4.0 - (06-10-2017)
+
+- Migrated the integration tests to inspec.
+- Changed some of the wording of the ChefSpec Tests
+
 ## 0.3.0 - (06-10-2017)
 
 - Corrected ChefSpec errors, warnings and now has 100% coverage
@@ -12,7 +17,7 @@ This file is used to list changes made in each version of the windows_schannel c
 
 ## 0.1.4 - (19-09-2016)
 
-- Added RC4 128/128 to the RC4 cipher suite with RC4 128/128 unit test
+- Added RC4 128/128 to the RC4 cipher suite with RC4 128/128 unit test (Thank You @brianbohanon)
 
 ## 0.1.3 - (20-06-2016)
 

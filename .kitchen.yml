@@ -6,6 +6,7 @@ driver:
 
 provisioner:
   name: chef_zero
+  always_update_cookbooks: true
 
 verifier:
   name: inspec
@@ -17,4 +18,7 @@ suites:
   - name: default
     run_list:
       - recipe[windows_schannel::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
     attributes:
