@@ -65,7 +65,7 @@ when 'windows'
 
     case node['windows_schannel']['cipher_rc4']
     when 'disable'
-      ['RC4 40/128', 'RC4 56/128', 'RC4 64/128'].each do |cipher|
+      ['RC4 40/128', 'RC4 56/128', 'RC4 64/128', 'RC4 128/128'].each do |cipher|
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
@@ -74,7 +74,7 @@ when 'windows'
         end
       end
     when 'enable'
-      ['RC4 40/128', 'RC4 56/128', 'RC4 64/128'].each do |cipher|
+      ['RC4 40/128', 'RC4 56/128', 'RC4 64/128', 'RC4 128/128'].each do |cipher|
         registry_key cipher do
           key "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Ciphers\\#{cipher}"
           recursive true
