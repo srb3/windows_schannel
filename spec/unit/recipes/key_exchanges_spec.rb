@@ -7,9 +7,9 @@
 require 'spec_helper'
 
 describe 'windows_schannel::key_exchanges' do
-  context 'When all attributes are default, on an windows platform' do
+  context 'When all attributes are default, on an windows platform it' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'windows', version: '2012')
+      runner = ChefSpec::ServerRunner.new(platform: 'windows', version: '2012r2')
       runner.converge(described_recipe)
     end
     it 'configures the use of the Diffie-Hellman Key Exchange' do

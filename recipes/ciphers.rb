@@ -17,7 +17,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['cipher_null'] }
     end
 
     registry_key 'cipher_des' do
@@ -31,7 +30,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['cipher_des'] }
     end
 
     case node['windows_schannel']['cipher_rc2']
@@ -87,7 +85,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['cipher_3des'] }
     end
 
     case node['windows_schannel']['cipher_aes']

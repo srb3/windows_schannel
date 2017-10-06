@@ -11,7 +11,7 @@ when 'windows'
       action :nothing
       delay_mins 1
       reason 'chef - windows_schannel - Changes made Schannel Protocols requires a reboot to take affect.'
-      only_if { node['windows_schannel']['allow_reboot'] }
+      only_if { node['windows_schannel']['allow_reboot'] == true }
     end
 
     registry_key 'pct_v1.0' do
@@ -28,7 +28,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['pct_v1.0'] }
     end
 
     registry_key 'ssl_v2.0' do
@@ -45,7 +44,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['ssl_v2.0'] }
     end
 
     registry_key 'ssl_v3.0' do
@@ -62,7 +60,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['ssl_v3.0'] }
     end
 
     registry_key 'tls_v1.0' do
@@ -79,7 +76,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['tls_v1.0'] }
     end
 
     registry_key 'tls_v1.1' do
@@ -96,7 +92,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['tls_v1.1'] }
     end
 
     registry_key 'tls_v1.2' do
@@ -113,7 +108,6 @@ when 'windows'
         :create
       end
       notifies :request_reboot, 'reboot[computer]'
-      only_if { node['windows_schannel']['tls_v1.2'] }
     end
   end
 end

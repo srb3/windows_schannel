@@ -17,7 +17,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['hash_md5'] }
     end
     registry_key 'hash_sha' do
       key 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA'
@@ -30,7 +29,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['hash_sha'] }
     end
   end
 end

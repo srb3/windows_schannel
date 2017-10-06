@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+## 0.3.0 - (06-10-2017)
+
+- Corrected ChefSpec errors, warnings and now has 100% coverage
+
 ## 0.2.0 - (06-10-2017)
 
 - Refreshed cookbook metadata, corrected unit & chef style linting errors

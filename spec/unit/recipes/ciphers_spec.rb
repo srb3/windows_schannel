@@ -7,9 +7,9 @@
 require 'spec_helper'
 
 describe 'windows_schannel::ciphers' do
-  context 'When all attributes are default, on an windows platform' do
+  context 'When all attributes are default, on an windows platform it' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'windows', version: '2012')
+      runner = ChefSpec::ServerRunner.new(platform: 'windows', version: '2012r2')
       runner.converge(described_recipe)
     end
     it 'configures the cipher null' do
@@ -20,9 +20,13 @@ describe 'windows_schannel::ciphers' do
     end
     it 'configures the cipher rc2' do
       expect(chef_run).to create_registry_key('RC2 40/128')
+      expect(chef_run).to create_registry_key('RC2 56/128')
+      expect(chef_run).to create_registry_key('RC2 128/128')
     end
     it 'configures the cipher rc4' do
       expect(chef_run).to create_registry_key('RC4 40/128')
+      expect(chef_run).to create_registry_key('RC4 56/128')
+      expect(chef_run).to create_registry_key('RC4 64/128')
       expect(chef_run).to create_registry_key('RC4 128/128')
     end
     it 'configures the cipher 3des' do
@@ -30,6 +34,7 @@ describe 'windows_schannel::ciphers' do
     end
     it 'configures the cipher aes' do
       expect(chef_run).to create_registry_key('AES 128/128')
+      expect(chef_run).to create_registry_key('AES 256/256')
     end
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error

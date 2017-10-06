@@ -17,7 +17,6 @@ when 'windows'
         values(name: 'Enabled', type: :dword, data: 4_294_967_295)
         :create
       end
-      only_if { node['windows_schannel']['keyEx_dh'] }
     end
   end
 end
