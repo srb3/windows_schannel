@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the windows_schannel cookbook.
 
+# 1.0.0 - (06-10-2017)
+
+- Bumping Cookbook to a big 1.0.0.  It's been used in production for over a year and I think it's in a strong shape, all functionatly tested.
+
 # 0.4.1 - (06-10-2017)
 
 - The registry key for the 3DES Cipher was incorrect and as a result wasn't managing it correctly

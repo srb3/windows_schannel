@@ -1,4 +1,4 @@
-# Contributing to Chef Managed Community Cookbooks
+# Contributing to this Cookbook
 
 We're glad you want to contribute to this cookbooks! The first step is the desire to improve the project.
 
@@ -18,6 +18,8 @@ Please create an issue with this repo, please include as much detail as you can 
 All pull requests must meet these specifications:
 
 1. **Tests:** To ensure high quality code and protect against future regressions, we require all cookbook code to be tested in some way. This can be either unit testing with ChefSpec or integration testing with Test Kitchen / InSpec. See the TESTING.md file for additional information on testing in Chef cookbooks and feel free to ask if you need help with the testing process.
+
+Run the `rake` command to validate your work
 
 ### Code Review Process
 

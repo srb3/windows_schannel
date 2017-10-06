@@ -78,7 +78,7 @@ License & Authors
 - Author:: Gary Bright (<digitalgaz@hotmail.com>)
 
 ```text
-Copyright 2016, Gary Bright
+Copyright 2017, Gary Bright
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
