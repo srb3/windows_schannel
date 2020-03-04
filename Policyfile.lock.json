@@ -1,0 +1,52 @@
+{
+  "revision_id": "4d4996930351e342a1bb2c535b4e7d1865c96563cee217cf93e0cfacf6e11fe9",
+  "name": "windows_schannel",
+  "run_list": [
+    "recipe[windows_schannel::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "windows_schannel": {
+      "version": "1.0.0",
+      "identifier": "d6f34229406e0fb1563384b2fddd2de7d89f7f00",
+      "dotted_decimal_identifier": "60503110501559823.49915850147429853.50473795026688",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "608cde46b87a1029ab5e10559913053254f76405",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "windows_schannel",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "windows_schannel (1.0.0)": [
+
+      ]
+    }
+  }
+}
